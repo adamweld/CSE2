@@ -13,9 +13,10 @@ public class WelcomeClass{
 		System.out.println("    | WELCOME |     ");
 		System.out.println("    -----------     ");
 		System.out.println("  ^  ^  ^  ^  ^  ^  ");
-//		System.out.println(" / \/ \/ \/ \/ \/ \ ");
+		System.out.println(" / \\/ \\/ \\/ \\/ \\/ \\ ");
 		System.out.println("|-A--A--W--2--1--8-|");
-//		System.out.println(" \ /\ /\ /\ /\ /\ / ");
+		System.out.println(" \\ /\\ /\\ /\\ /\\ /\\ / ");
 		System.out.println("  v  v  v  v  v  v  ");
+		System.out.println("This week I started taking a CSE class at Lehigh University, teaching basic Java. I hope to use skills gained herein for Android programming.");
 	}
 }
