@@ -11,9 +11,12 @@ public class HelloWorld{
 	public static void main(String[] args) {
 		
 		//print hello world message
-		System.out.println("Hello World");
-		System.out.println("CSE2 class program");
-		System.out.println("Adam Weld");
-		System.out.println("text test string");
+		System.out.println("######################");
+		System.out.println("######################");
+		System.out.println("#                    #");
+		System.out.println("# Hello World 2014!! #");
+		System.out.println("#                    #");
+		System.out.println("######################");
+		System.out.println("######################");
 	}
 }
