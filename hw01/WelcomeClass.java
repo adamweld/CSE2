@@ -13,7 +13,7 @@ public class WelcomeClass{
 		System.out.println("    | WELCOME |     ");
 		System.out.println("    -----------     ");
 		System.out.println("  ^  ^  ^  ^  ^  ^  ");
-		System.out.println(" / \\/ \\/ \\/ \\/ \\/ \\ ");
+		System.out.println(" / \\/ \\/ \\/ \\/ \\/ \\ "); //extra '\' are to stop interrupt char errors so it works
 		System.out.println("|-A--A--W--2--1--8-|");
 		System.out.println(" \\ /\\ /\\ /\\ /\\ /\\ / ");
 		System.out.println("  v  v  v  v  v  v  ");
