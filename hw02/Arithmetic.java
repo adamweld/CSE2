@@ -34,9 +34,10 @@ public class Arithmetic { //create class to truncate a double
 		double finalGlassesCost$ = totalGlassesCost$ + taxGlassesCost$;
 		double finalEnvelopesCost$ = totalEnvelopesCost$ + taxEnvelopesCost$;
 	// Output print statements
+	// +truncate() returns decimal approximation of each double
 		// Glasses
 		System.out.println("Item:                        Socks");
-		System.out.println("Number of item(s):            "+truncate(nSocks));
+		System.out.println("Number of item(s):            "+truncate(nSocks)); //call truncate method when printing
 		System.out.println("Cost per item:               $"+truncate(sockCost$));
 		System.out.println("Total cost before sales tax: $"+truncate(totalSocksCost$));
 		System.out.println("Sales tax on item(s):        $"+truncate(taxSocksCost$));
