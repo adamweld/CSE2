@@ -35,21 +35,21 @@ public class Arithmetic { //create class
 		double finalEnvelopesCost$ = totalEnvelopesCost$ + taxEnvelopesCost$;
 	// Output print statements
 		// Glasses
-		System.out.println("Item:                        Socks");
+		System.out.println("Item:                          Socks");
 		System.out.println("Number of item(s):            "+truncate(nSocks));
 		System.out.println("Cost per item:               $"+truncate(sockCost$));
 		System.out.println("Total cost before sales tax: $"+truncate(totalSocksCost$));
 		System.out.println("Sales tax on item(s):        $"+truncate(taxSocksCost$));
 		System.out.println("Total cost after sales tax:  $"+truncate(finalSocksCost$));
 		// Glasses
-		System.out.println("Item:                        Glasses");
+		System.out.println("Item:                          Glasses");
 		System.out.println("Number of item(s):            "+truncate(nGlasses));
 		System.out.println("Cost per item:               $"+truncate(glassCost$));
 		System.out.println("Total cost before sales tax: $"+truncate(totalGlassesCost$));
 		System.out.println("Sales tax on item(s):        $"+truncate(taxGlassesCost$));
 		System.out.println("Total cost after sales tax:  $"+truncate(finalGlassesCost$));
 		// Envelopes
-		System.out.println("Item:                        Envelopes");
+		System.out.println("Item:                          Envelopes");
 		System.out.println("Number of item(s):            "+truncate(nEnvelopes));
 		System.out.println("Cost per item:               $"+truncate(envelopeCost$));
 		System.out.println("Total cost before sales tax: $"+truncate(totalEnvelopesCost$));
