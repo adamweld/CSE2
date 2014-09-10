@@ -2,12 +2,12 @@
 // Sun 07 Sep 2014 09:24:42 PM EDT
 // CSE2
 //
-public class Arithmetic { //create class
+public class Arithmetic { //create class to truncate a double
 	public static double truncate(double x){
-		x *= 100;
-		int n = (int)x;
-		double d = (double)n / 100;
-		return d;
+		x *= 100; //multiply double by 100
+		int n = (int)x; //convert to int
+		double d = (double)n / 100; //cast back to double then /100
+		return d; //return truncated value
 	}
 	public static void main(String[] args) { //create main method
 	// Input declarations
