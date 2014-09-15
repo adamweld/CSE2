@@ -16,13 +16,12 @@ public class FourDigits { //create main method
 		double nInput = myScanner.nextDouble();
 
 		// computations
-		int truncatedInput = (int) nInput;
-		double fourDigits = nInput - truncatedInput; 
-		int n1 = (int) (fourDigits * 10);
-		int n2 = (int) (fourDigits * 100 - n1 * 10);
-		int n3 = (int) (fourDigits * 1000 - (n1 * 100 + n2 * 10));
-		int n4 = (int) (fourDigits * 10000 - (n1 * 1000 + n2 * 100 + n3 * 10));
-		String outDigits = Double.toString(fourDigits);
+		int truncatedInput = (int) nInput; //get value left of decimal point
+		double fourDigits = nInput - truncatedInput; //get just the decimal value
+		int n1 = (int) (fourDigits * 10); //calculate first decial digit
+		int n2 = (int) (fourDigits * 100 - n1 * 10); //get first two, then subtract the 10's place
+		int n3 = (int) (fourDigits * 1000 - (n1 * 100 + n2 * 10)); //get first 3 then subtract 10s and 100s
+		int n4 = (int) (fourDigits * 10000 - (n1 * 1000 + n2 * 100 + n3 * 10)); //get 4th decimal place
 
 		//print
 		System.out.println("first four decimal digits: " + n1 + n2 + n3 + n4);
