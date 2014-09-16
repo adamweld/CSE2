@@ -11,9 +11,9 @@ public class FourDigits { //create main method
 	public static void main(String[] args) { //create main method
 
 		// input section
-		Scanner myScanner = new Scanner( System.in );
-		System.out.print("enter double to be converted: ");
-		double nInput = myScanner.nextDouble();
+		Scanner myScanner = new Scanner( System.in ); //create new scanner for user inputs
+		System.out.print("enter double to be converted: "); //query user for double input
+		double nInput = myScanner.nextDouble(); //set var nInput to user input
 
 		// computations
 		int truncatedInput = (int) nInput; //get value left of decimal point

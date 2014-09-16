@@ -20,10 +20,7 @@ public class Root {
 		// calculations
 		// 8 iterations of increasing accuracy to guess the root
 		double rootGuess = (nInput / 3); //first guess root as input / 3
-		rootGuess = (rootGuess * rootGuess * rootGuess * 2 + nInput) / (rootGuess * rootGuess * 3); 
-		rootGuess = (rootGuess * rootGuess * rootGuess * 2 + nInput) / (rootGuess * rootGuess * 3);
-		rootGuess = (rootGuess * rootGuess * rootGuess * 2 + nInput) / (rootGuess * rootGuess * 3);
-		rootGuess = (rootGuess * rootGuess * rootGuess * 2 + nInput) / (rootGuess * rootGuess * 3);
+		rootGuess = (rootGuess * rootGuess * rootGuess * 2 + nInput) / (rootGuess * rootGuess * 3); //improve guess
 		rootGuess = (rootGuess * rootGuess * rootGuess * 2 + nInput) / (rootGuess * rootGuess * 3);
 		rootGuess = (rootGuess * rootGuess * rootGuess * 2 + nInput) / (rootGuess * rootGuess * 3);
 		rootGuess = (rootGuess * rootGuess * rootGuess * 2 + nInput) / (rootGuess * rootGuess * 3);
