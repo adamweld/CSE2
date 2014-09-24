@@ -20,4 +20,6 @@ public class BoolaBoola {
 		Scanner input = new Scanner(System.in);
 		
 		//create 3 random booleans
-		boolean boola = 
+		boolean boolA = (int) (Math.random()*2) == 0;
+		boolean boolB = (int) (Math.random()*2) == 0;
+		boolean boolC = (int) (Math.random()*2) == 0;
