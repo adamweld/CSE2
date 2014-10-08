@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class LoopTheLoop {
     public static void main(String args[]) {
+        while(true) {
         System.out.println("Enter an integer between 1 and 15: ");
         Scanner myScanner = new Scanner(System.in);
         if (myScanner.hasNextInt()) {
@@ -20,11 +21,15 @@ public class LoopTheLoop {
                 }
             } else {
                 System.out.println("int was not in range [1,15]");
-                return;
+                break;
             }
         } else {
             System.out.println("Incorrect Input (not int)");
-            return;
+            break;
         }
+      System.out.print("Do you want to continue? (y/Y): ");
+      String contIn = myScanner.next();
+      if (!(contIn.equals("y") || contIn.equals("Y"))) break;
+      }
     }
 }
