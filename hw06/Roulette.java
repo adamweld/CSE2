@@ -2,14 +2,14 @@
 // CSE2
 // HW06
 // 10/10/14
-//
+// Program to simulate Roullete betting system
 
-public class Roulette {
-  public static void main(String args[]) {
+public class Roulette { //create class
+  public static void main(String args[]) { //create 
     int countLostAll = 0; //initialize count vars
     int countLostSome = 0;
     int countWonSome = 0;
-    int totalWinnings = 0;
+    int totalWinnings = 0; //var to carry sum of winnings
     for (int i=0;i<1000;i++) { //play 1000 games
       int gameSum = 0; //initalize game sum every game
       int bet = (int)(Math.random()*38); //random bet
@@ -28,7 +28,7 @@ public class Roulette {
       else {
         countLostSome++; //won less than put in
       }
-      totalWinnings += gameSum;
+      totalWinnings += gameSum; //add game sum to total sum
     }
     System.out.println("Games with wins less than $100: " + countLostSome);
     System.out.println("Games with zero winnings: " + countLostAll);
