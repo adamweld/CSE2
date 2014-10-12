@@ -10,11 +10,11 @@ public class Roulette {
     int countLostSome = 0;
     int countWonSome = 0;
     int totalWinnings = 0;
-    for (int i=0;i<100000;i++) { //play 100000 games
+    for (int i=0;i<1000;i++) { //play 1000 games
       int gameSum = 0; //initalize game sum every game
+      int bet = (int)(Math.random()*38); //random bet
       for (int j=0;j<100;j++) { //100 rounds per game
-        int bet = (int)(Math.random()*38); //random bet and random spin
-        int spin = (int)(Math.random()*38);
+        int spin = (int)(Math.random()*38); //random spin
         if (bet == spin) { //if spin hits your number
           gameSum += 36; //add winnings to game sum
         }
