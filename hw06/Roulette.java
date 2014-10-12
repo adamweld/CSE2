@@ -30,6 +30,7 @@ public class Roulette { //create class
       }
       totalWinnings += gameSum; //add game sum to total sum
     }
+    // print section
     System.out.println("Games with wins less than $100: " + countLostSome);
     System.out.println("Games with zero winnings: " + countLostAll);
     System.out.println("Games with positive winnings: " + countWonSome);
