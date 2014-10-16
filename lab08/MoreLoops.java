@@ -28,7 +28,7 @@ public class MoreLoops{
 
     // for(int j=0;j<n && j<40;j++){
     //     for(int k=0;k<j+1;k++){
-    //     System.out.print('*');
+    //         System.out.print('*');
     //     }
     //     System.out.println();
     // }
@@ -41,6 +41,7 @@ public class MoreLoops{
         }
         System.out.println();
         j++;
+        k=0;
     }
     
     //COMMENT OUT THE ABOVE SIX LINES OF CODE AND REPLACE WITH
@@ -64,23 +65,38 @@ public class MoreLoops{
         //COMMENT OUT THE ABOVE FIVE LINES AND REPLACE THE CODE
     //WITH A WHILE LOOP
 
-        int count=0;
-        while(true){
-        switch(n){
-        default: System.out.println(n + " is > 5 or <1");
-        break;
-        case 1:
-        case 2: System.out.print("Case 2 ");
-        continue;
-        case 3: break;
-        case 4: System.out.println("Case 4");
-        case 5: System.out.println("Case 5");
-        break;
+    //     int count=0;
+    //     while(true){
+    //     switch(n){
+    //     default: System.out.println(n + " is > 5 or <1");
+    //     break;
+    //     case 1:
+    //     case 2: System.out.print("Case 2 ");
+    //     continue;
+    //     case 3: break;
+    //     case 4: System.out.println("Case 4");
+    //     case 5: System.out.println("Case 5");
+    //     break;
+    //     }
+    //     count++;
+    //     if(count>10)
+    //     break;
+    // }
+    
+    for(int count=0;count<=10;count++) {
+        if (n == 1 || n == 2) {
+            System.out.print("Case 2 ");
+            count--;
+        } else if (n == 4 || n == 5) {
+            System.out.println("Case 4");
+            System.out.println("Case 5");
+        } else if (n == 3) {
+            ;
+        } else {
+            System.out.println(n + " is > 5 or <1");
         }
-        count++;
-        if(count>10)
-        break;
     }
+    
     //COMMENT OUT THE ABOVE 16 LINES AND REWRITE THE CODE USING
     // ONLY FOR LOOPS AND IF STATEMENS. BEFORE DOING SO, TRY
     //RUNNING THE CODE WITH VARIOUS INPUTTED VALUES, E.G.,
