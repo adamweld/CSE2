@@ -37,12 +37,24 @@ public class NumberStack {
 
     for(int i = 1; i <= x; i++) { //runs once per number printed
       int width = i * 2 - 1; //width starts at one, increases by 2
+      int spaces = x-i; //number of spaces to add before line
       for(int j = 0; j < i; j++) { //runs once per line of numbers
 
-        for(int p = 0; p < width; p++) { //prints a row of numbers
+        //print blank space to center
+        for(int k = 0; k < spaces; k++) {
+          System.out.print(" ");
+        }
+
+        //print (x) rows of x
+        for(int p = 0; p < width; p++) {
           System.out.print(i); //printing starts at 1, goes to x
         }
         System.out.printf("\n"); //break
+      }
+
+      //print blank space to center
+      for(int k = 0; k < spaces; k++) {
+        System.out.print(" ");
       }
 
       //print dashes to seperate numbers
@@ -56,12 +68,21 @@ public class NumberStack {
   public static void StackWhile(int x) {
     System.out.println("Using while loops:");
     //print x iterations of number stacks
-    int num = 1;
+    int num = 1; //start with 1
     while(num <= x) {
+
       //print num lines
       int countLines = 0;
       int width = num * 2 - 1; //width starts at one, increases by 2
+      int spaces = x-num; //number of spaces to add before line
       while(countLines < num) {
+        //print spaces
+        int countSpaces = 0;
+        while(countSpaces < spaces) {
+          System.out.print(" ");
+          countSpaces++;
+        }
+
         //print num rows of num
         int countRows = 0;
         while(countRows < width) { //prints num * width
@@ -71,6 +92,13 @@ public class NumberStack {
         System.out.printf("\n"); //break
         countLines++;
       }
+      //print spaces
+      int countSpaces = 0;
+      while(countSpaces < spaces) {
+        System.out.print(" ");
+        countSpaces++;
+      }
+
       //print num dashes to seperate numbers
       int countDashes = 0;
       while(countDashes < width) {
@@ -78,13 +106,56 @@ public class NumberStack {
         countDashes++;
       }
       System.out.printf("\n"); //break
-      num++;
+      num++; //increment number being printed
     }
   }
 
-
-
   public static void StackDoWhile(int x) {
     System.out.println("Using do while loops:");
+    //print x iterations of number stacks
+    int num = 1; //start with 1
+    do {
+
+      //print num lines
+      int countLines = 0;
+      int width = num * 2 - 1; //width starts at one, increases by 2
+      int spaces = x-num; //number of spaces to add before line
+      do {
+        //print spaces
+        int countSpaces = 0;
+        do {
+          if(spaces == 0) break; //exception when spaces is 0; if statement needed
+          System.out.print(" ");
+          countSpaces++;
+        } while(countSpaces < spaces);
+
+        //print num rows of num
+        int countRows = 0;
+        do { //prints num * width
+          System.out.print(num);
+          countRows++;
+        } while(countRows < width);
+        System.out.printf("\n"); //break
+        countLines++;
+      } while(countLines < num);
+
+      //print spaces
+      int countSpaces = 0;
+      do {
+        if(spaces == 0) break; //special case spaces == 0
+        System.out.print(" ");
+        countSpaces++;
+      } while(countSpaces < spaces);
+
+      //print num dashes to seperate numbers
+      int countDashes = 0;
+      do {
+        System.out.print("-");
+        countDashes++;
+      } while(countDashes < width);
+
+      System.out.printf("\n"); //break
+      num++; //increment number being printed
+    } while(num <= x);
   }
 }
