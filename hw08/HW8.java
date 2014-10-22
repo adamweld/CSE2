@@ -5,7 +5,7 @@ public class HW8{
   public static char getInput(Scanner myScanner, String paramIn) {
     while(true) {
       String input = myScanner.next();
-      if(input.length() > 1) {
+      if(input.length() > 1) { // check length
         System.out.print("Enter exactly one character: ");
         continue;
       }
@@ -24,10 +24,11 @@ public class HW8{
   // getInput with scanner name , characters to match AND # tries
   public static char getInput(Scanner myScanner, String paramIn, int tries) {
     int countTries = 0;
-    while(countTries < tries) {
+    while(countTries < tries) { // only try (int tries) # of times
       String input = myScanner.next();
-      if(input.length() > 1) {
+      if(input.length() > 1) { // check length
         System.out.print("Enter exactly one character: ");
+        countTries++;
         continue;
       }
       for(int i = 0; i < paramIn.length(); i++) {
@@ -74,18 +75,18 @@ public class HW8{
   }
 
   public static void main(String []arg){
-  char input;
-  Scanner scan=new Scanner(System.in);
-  System.out.print("Enter 'C' or 'c' to continue, anything else to quit- ");
-  input=getInput(scan,"Cc");
-  System.out.println("You entered '"+input+"'");
-  System.out.print("Enter 'y', 'Y', 'n', or 'N'- ");
-  input=getInput(scan,"yYnN",5); // give up after 5 attempts
-  if(input!=' '){
+    char input;
+    Scanner scan=new Scanner(System.in);
+    System.out.print("Enter 'C' or 'c' to continue, anything else to quit- ");
+    input=getInput(scan,"Cc");
     System.out.println("You entered '"+input+"'");
-  }
-  input=getInput(scan,"Choose a digit.","0123456789");
-  System.out.println("You entered '"+input+"'");
+    System.out.print("Enter 'y', 'Y', 'n', or 'N'- ");
+    input=getInput(scan,"yYnN",5); // give up after 5 attempts
+    if(input!=' '){
+      System.out.println("You entered '"+input+"'");
+    }
+    input=getInput(scan,"Choose a digit.","0123456789");
+    System.out.println("You entered '"+input+"'");
   }
 }
 
