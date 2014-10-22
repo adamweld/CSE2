@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class HW8{
+  
   // getInput with scanner name , characters to match ONLY
   public static char getInput(Scanner myScanner, String paramIn) {
     while(true) {
@@ -11,7 +12,6 @@ public class HW8{
       for(int i = 0; i < paramIn.length(); i++) {
           // if input is equal to one of the parameters
           if(input.charAt(0) == paramIn.charAt(i)) {
-            System.out.println("You entered '" + input + "'.");
             return input.charAt(0); //return a char
           }
       }
@@ -33,7 +33,6 @@ public class HW8{
       for(int i = 0; i < paramIn.length(); i++) {
           // if input is equal to one of the parameters
           if(input.charAt(0) == paramIn.charAt(i)) {
-            System.out.println("You entered '" + input + "'.");
             return input.charAt(0); // return a char
           }
       }
@@ -50,14 +49,13 @@ public class HW8{
   // getInput with scanner name , user prompt, and characters to match
   public static char getInput(Scanner myScanner, String prompt, String paramIn) {
     while(true) {
-      System.out.print(prompt); // print prompt passed to function
+      System.out.println(prompt); // print prompt passed to function
       // prompt user with correct input possibilites
       System.out.print("Enter one of: ");
       for(int p = 0; p < paramIn.length()-1; p++) {
         System.out.print("'"+paramIn.charAt(p)+"',");
       }
-      System.out.print("'"+paramIn.charAt(paramIn.length())+"': ");
-
+      System.out.print("'"+paramIn.charAt(paramIn.length()-1)+"': ");
 
       String input = myScanner.next();
       if(input.length() > 1) {
@@ -67,12 +65,11 @@ public class HW8{
       for(int i = 0; i < paramIn.length(); i++) {
           // if input is equal to one of the parameters
           if(input.charAt(0) == paramIn.charAt(i)) {
-            System.out.println("You entered '" + input + "'.");
             return input.charAt(0); // return a char
           }
       }
       // if we reached the end of the while loop, input was (still) bad
-      System.out.print("You did not enter an acceptable character");
+      System.out.println("You did not enter an acceptable character");
     }
   }
 
