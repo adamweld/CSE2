@@ -1,0 +1,43 @@
+// Adam Weld
+// 10/22/2014
+// Lab09
+// Methods test
+//
+
+import java.util.Scanner;
+
+public class Methods {
+  public static void main(String args[]) {
+    Scanner scan = new Scanner(System.in);
+    int a,b,c;
+    System.out.println("Enter thee ints");
+    a = getInt(scan);
+    b = getInt(scan);
+    c = getInt(scan);
+    System.out.println("The larger of "+a+" and "+b+" is "+larger(a,b));
+    System.out.println("The larger of "+a+", "+b+", and "+c+
+      " is "+larger(a,larger(b,c)));
+    System.out.println("It is "+ascending(a,b,c)+" that "+a+", "+b+
+      ", and "+c+" are in ascending order");
+  }
+
+  public static int getInt(Scanner scannerName) {
+    System.out.print("Enter int: "); //query
+    if(!scannerName.hasNextInt()) { //check for correct input
+      System.out.println("input must be int");
+    }
+    return scannerName.nextInt();
+  }
+  public static boolean ascending(int a, int b, int c){
+    return (a<b && b<c); //check ascending order
+  }
+  public static int larger(int a, int b) {
+    int larger = a; //define larger as one of the numbers
+    if (b > a) {
+      larger = b; //change to other if other is larger
+    }
+    return larger; //return
+  }
+
+}
+
