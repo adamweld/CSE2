@@ -1,9 +1,18 @@
+// Adam Weld
+// 28 Oct 2014 (Tue)
+// HW8
+// CSE2
+// program to prompt user input and check against correct possibilites
+// three different getInput methods overloaded
+//
+
+// import Scanner
 import java.util.Scanner;
 public class HW8{
 
   // getInput with scanner name , characters to match ONLY
   public static char getInput(Scanner myScanner, String paramIn) {
-    while(true) {
+    while(true) { // keep running until it returns
       String input = myScanner.next();
       if(input.length() > 1) { // check length
         System.out.print("Enter exactly one character: ");
@@ -40,7 +49,7 @@ public class HW8{
       // if we reached the end of the while loop, input was (still) bad
       System.out.print("You did not enter a char from list '" 
           + paramIn + "'; try again: ");
-      countTries++;
+      countTries++; // increment number of tries
     }
     // if we get here, user failed after 'tries' # of tries
     System.out.println("\nYou failed after " + tries + " tries.");
@@ -76,9 +85,10 @@ public class HW8{
 
   public static void main(String []arg){
     char input;
+    // create scanner object
     Scanner scan=new Scanner(System.in);
     System.out.print("Enter 'C' or 'c' to continue, anything else to quit- ");
-    input=getInput(scan,"Cc");
+    input=getInput(scan,"Cc"); //call getInput with (Scanner, String)
     System.out.println("You entered '"+input+"'");
     System.out.print("Enter 'y', 'Y', 'n', or 'N'- ");
     input=getInput(scan,"yYnN",5); // give up after 5 attempts
