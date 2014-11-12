@@ -30,7 +30,8 @@ public class Arrays {
       myArrayBack[p] = myArray[9-p];
     }
     for(int j = 0; j < 10; j++) {
-      System.out.println(myArray[j] + "  " + myArrayBack[j]);
+      //System.out.println(myArray[j] + "   " + myArrayBack[j]);
+      System.out.printf("%-5d   %-5d \n",myArray[j],myArrayBack[j]);
     }
 
 
