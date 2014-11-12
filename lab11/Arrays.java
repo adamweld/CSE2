@@ -33,8 +33,5 @@ public class Arrays {
       //System.out.println(myArray[j] + "   " + myArrayBack[j]);
       System.out.printf("%-5d   %-5d \n",myArray[j],myArrayBack[j]);
     }
-
-
   }
 }
-
