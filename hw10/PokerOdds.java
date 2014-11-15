@@ -11,33 +11,33 @@ public class PokerOdds{
   public static String cardFormat(int x) {
     switch (x) {
       case (0) :
-        return "A ";
+        return"A";
       case (1) :
-        return "K ";
+        return"K";
       case (2) :
-        return "Q ";
+        return"Q";
       case (3) :
-        return "J ";
+        return"J";
       case (4) :
-        return "10 ";
+        return"10";
       case (5) :
-        return "9 ";
+        return"9";
       case (6) :
-        return "8 ";
+        return"8";
       case (7) :
-        return "7 ";
+        return"7";
       case (8) :
-        return "6 ";
+        return"6";
       case (9) :
-        return "5 ";
+        return"5";
       case (10) :
-        return "4 ";
+        return"4";
       case (11) :
-        return "3 ";
+        return"3";
       case (12) :
-        return "2 ";
+        return"2";
       default:
-        return "err";
+        return"err";
     }
   }
 
@@ -54,7 +54,7 @@ public class PokerOdds{
         deck[y] = y;
       }
       int deckMax = 52; // the largest 'real' value in deck array
-                        // note that index will be (deckMax - 1)
+      // note that index will be (deckMax - 1)
       int[] hand = {-1, -1, -1, -1, -1};
 
       for(int i = 0; i < 5; i++) {
@@ -63,19 +63,19 @@ public class PokerOdds{
         deck[n] = deck[deckMax-1]; // replace card that was taken with last card in deck
         deck[deckMax-1] = -1; // take a card out of the deck
         deckMax--; // deck now has one less card
-        System.out.println(FindDuplicates.listArray(hand));
+        //System.out.println(FindDuplicates.listArray(hand));
       }
 
 
       // array of the values of each card, sorted by suit
       // e.g. A Q 3
-      String[] cards = {"", "", "", "", ""}; // clubs, diamonds, hearts, spades
+      String[] cards = {"", "", "", "",}; // clubs, diamonds, hearts, spades
       for(int j = 0; j < 4; j++) {
         for(int f = 0; f < 5; f++) { // check each value of the hand
           if(j == hand[f] / 13) { // if in suit (0,1,2,3,4)
-            cards[j] += cardFormat(hand[f] % 13); // get the card number/letter from rank
-            System.out.println("rank: " + hand[f] + " suit: " + j + " value: "
-                + hand[f] % 13 + " name: " + cardFormat(hand[f] % 13));
+            cards[j] += cardFormat(hand[f] % 13) + " "; // get the card number/letter from rank
+            //System.out.println("rank: " + hand[f] + " suit: " + j + " value: "
+            //    + hand[f] % 13 + " name: " + cardFormat(hand[f] % 13));
           }
         }
       }
@@ -92,17 +92,20 @@ public class PokerOdds{
 
     } while(answer.equals("Y") || answer.equals("y"));
   }
+
   public static void simulateOdds() {
     Random rand = new Random(); // create random object
     int[] numExactlyOnePair = new int[13];
     int numNotOnePair = 0;
+    String[] labels = {"A", "K", "Q", "J", "10", "9"
+      , "8", "7", "6", "5", "4", "3", "2"};
     for(int p = 0; p < 10000; p++) { // run 10,000 trials
       int[] deck = new int[52];
       for(int y = 0; y < 52; y++) { // initialize deck with [0,51]
         deck[y] = y;
       }
       int deckMax = 52; // the largest 'real' value in deck array
-                        // note that index will be (deckMax - 1)
+      // note that index will be (deckMax - 1)
       int[] hand = {-1, -1, -1, -1, -1};
 
       for(int i = 0; i < 5; i++) {
@@ -112,15 +115,40 @@ public class PokerOdds{
         deck[deckMax-1] = -1; // take a card out of the deck
         deckMax--; // deck now has one less card
       }
+
+
+      String[] cards = {"", "", "", "",}; // clubs, diamonds, hearts, spades
+      for(int j = 0; j < 4; j++) {
+        for(int f = 0; f < 5; f++) { // check each value of the hand
+          if(j == hand[f] / 13) { // if in suit (0,1,2,3,4)
+            cards[j] += cardFormat(hand[f] % 13); // get the card number/letter from rank
+          }
+        }
+      }
+
+
+
+
+
+
+      for(int l = 0; l < 4; l++) { // runs once per value in the array
+        for(int j = 0; j < 13; j++) { // check array values
+          if(cards[l].equals(labels[j])) {
+            numExactlyOnePair[j]++;
+          }
+        }
+      }
+
     }
-    String[] labels = {"A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"};
+
     System.out.println(" rank  freq of exactly one pair");
     for(int i = 0; i < 13; i++) {
-      System.out.printf("%s    %4d \n",labels[i],numExactlyOnePair[i]);
+      System.out.printf("%s    %4d \n",labels[i],numExactlyOnePair[i] / 4);
     }
     System.out.println("------------------------------------------");
     System.out.println("total not exactly one pair: " + numNotOnePair);
-    
+
+
   }
 
   public static void main(String [] arg){
