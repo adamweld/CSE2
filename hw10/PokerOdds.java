@@ -115,7 +115,11 @@ public class PokerOdds{
         deck[deckMax-1] = -1; // take a card out of the deck
         deckMax--; // deck now has one less card
       }
+      int[] handRank = {hand[0] % 13, hand[1] % 13, hand[2] % 13, hand[3] % 13,hand[3] % 13,hand[4] % 13};
 
+      if(FindDuplicates.numDups(handRank) != 1) {
+        numNotOnePair++;
+      }
 
       String[] cards = {"", "", "", "",}; // clubs, diamonds, hearts, spades
       for(int j = 0; j < 4; j++) {
@@ -125,11 +129,6 @@ public class PokerOdds{
           }
         }
       }
-
-
-
-
-
 
       for(int l = 0; l < 4; l++) { // runs once per value in the array
         for(int j = 0; j < 13; j++) { // check array values
@@ -147,7 +146,6 @@ public class PokerOdds{
     }
     System.out.println("------------------------------------------");
     System.out.println("total not exactly one pair: " + numNotOnePair);
-
 
   }
 
