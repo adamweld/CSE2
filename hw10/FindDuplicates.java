@@ -40,8 +40,8 @@ public class FindDuplicates {
 
   public static void main(String [] arg){
     Scanner scan=new Scanner(System.in);
-    int num[]=new int[10];
-    String answer="";
+    int num[]=new int[10]; // space for 10 ints
+    String answer=""; // empty string
     do{
       System.out.print("Enter 10 ints- ");
       for(int j=0;j<10;j++){

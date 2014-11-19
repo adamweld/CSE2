@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.Scanner;
 public class PokerOdds{
 
-  public static String cardFormat(int x) {
+  public static String cardFormat(int x) { // formats returns String card rank
     switch (x) {
       case (0) :
         return"A";
@@ -82,7 +82,7 @@ public class PokerOdds{
 
 
 
-      String labels[] = {"Clubs: ","Diamonds: ","Hearts: ","Spades: "};
+      String labels[] = {"Clubs: ","Diamonds: ","Hearts: ","Spades: "}; // hand labels
       for(int p = 0; p < 4; p++) {
         System.out.println(labels[p]+cards[p]);
       }
@@ -115,9 +115,9 @@ public class PokerOdds{
         deck[deckMax-1] = -1; // take a card out of the deck
         deckMax--; // deck now has one less card
       }
-      int[] handRank = {hand[0] % 13, hand[1] % 13, hand[2] % 13, hand[3] % 13,hand[3] % 13,hand[4] % 13};
+      int[] handRank = {hand[0] % 13, hand[1] % 13, hand[2] % 13, hand[3] % 13,hand[3] % 13,hand[4] % 13}; // hand array with numerical rank
 
-      if(FindDuplicates.numDups(handRank) != 1) {
+      if(FindDuplicates.numDups(handRank) != 1) { // no pairs / more than one pair
         numNotOnePair++;
       }
 
