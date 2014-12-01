@@ -101,16 +101,50 @@ public class PokerHands {
             }
         }
         
-        if(freqCount[2] == 1 && freqCount[3] ==1) name = 5;
-        if(freqCount[4] == 1) name = 6;
+        if(freqCount[2] == 1) name = 1; // one pair
+        if(freqCount[2] == 2) name = 2; // two pairs
+        if(freqCount[1] == 5) { // check for straight
+            int numOnes = 0;
+            int startIndex = findIndex(rankFreq, 1); // find index of first 1 in array
+            int maxIndex = Math.min(startIndex + 5, 13);
+            for(int u = startIndex; u < maxIndex; u++) { // check for 5 1s in a row
+                if(rankFreq[u] == 1) numOnes++;
+            }
+            if(numOnes == 5) name = 3; // found straight, otherwise high card
+        }
+        boolean flush = true;
+        int flushSuit = hand[0] / 13;
+        for(int h = 1; h < 5; h++) { // check for flush
+            if(hand[h] / 13 != flushSuit) flush = false;
+        }
+        if(flush && name == 3) name = 7; // straight flush
+        else if(flush) { // check for royal flush
+            name = 8; // assume royal flush
+            int[] handRank = new int[5];
+            for(int x = 0; x < 5; x++) { // make array of card ranks only
+                handRank[x] = hand[x] % 13;
+            }
+            Arrays.sort(handRank); // sort by rank
+            for(int l = 0; l < 5; l++) {
+                if(handRank[l] != l) name = 4; // not a royal flush, so just a flush
+            }
+        }
+        if(freqCount[2] == 1 && freqCount[3] ==1) name = 5; // full house
+        if(freqCount[4] == 1) name = 6; // four of a kind
         
         
         System.out.println("\nThis is a " + rankNames[name]);
         
     }
+    public static int findIndex(int[] x, int a) {
+        for(int i = 0; i < x.length; i++) {
+            if(x[i] == a) return i;
+        }
+        return -1;
+    }
     
     public static void showOneHand(int hand[]){
-    	String suit[]={"Clubs:	", "Diamonds: ", "Hearts:   ",              "Spades:   "};
+    	String suit[]={"Clubs:	", "Diamonds: ", "Hearts:   ", "Spades:   "};
     	String face[]={
            "A ","K ","Q ","J ","10 ","9 ","8 ","7 ","6 ","5 ",
       	"4 ","3 ","2 "};
