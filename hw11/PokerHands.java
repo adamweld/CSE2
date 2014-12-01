@@ -87,6 +87,7 @@ public class PokerHands {
     public static void showRank(int[] hand){
         String[] rankNames = {"High Card", "One Pair", "Two Pair", "Straight",
             "Flush", "Full House", "Four of a kind", "Straight Flush", "Royal Flush"};
+        int name = 0; // start with High Card
         int[] rankFreq = new int[13]; // frequency of each rank
         int[] freqCount = new int[5]; // freq of # in rankFreq
         for(int i = 0; i < 13; i++) { // fill rankFreq
@@ -99,9 +100,12 @@ public class PokerHands {
                 if(rankFreq[k] == p) freqCount[p]++;
             }
         }
-        System.out.println(Arrays.toString(rankFreq));
-        System.out.println(Arrays.toString(freqCount));
-        System.out.println();
+        
+        if(freqCount[2] == 1 && freqCount[3] ==1) name = 5;
+        if(freqCount[4] == 1) name = 6;
+        
+        
+        System.out.println("\nThis is a " + rankNames[name]);
         
     }
     
